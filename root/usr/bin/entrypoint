@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -eu
+private_key="$HOME/.gnupg/private.key"
+if [ -f "$private_key" ]; then
+	gpg --import "$private_key"
+fi
+aptly "$@"
